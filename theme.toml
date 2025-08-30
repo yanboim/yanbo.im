@@ -1,0 +1,916 @@
+name = "jiaxiang.wang"
+description = "A fast and beautiful theme for creators, used by https://blog.jiaxiang.wang, porting from Halo-theme-hao."
+license = "AGPL"
+homepage = "https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang"
+min_version = "0.19.2"
+demo = "https://theme.jiaxiang.wang/"
+
+[author]
+name = "Jiaxiang Wang"
+homepage = "https://blog.jiaxiang.wang"
+
+[original]
+author =  "chengzhongxue"
+homepage = "https://github.com/chengzhongxue"
+repo = "https://github.com/chengzhongxue/halo-theme-hao"
+
+[extra]
+
+# 站点设置
+[extra.site]
+# SEO 设置
+seo = "一个博客网站，基于 https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang 主题构建"
+# 网站logo
+logo = "/img/logo.webp"
+# 网站favicon 尺寸比logo更小
+favicon = "/img/logo.webp"
+# 建站时间
+# site_start_time = "2024-11-05"
+# ICP 备案 格式：鲁ICP备 xxxxxxxx 号
+compliance_icp = "ICP"
+# 公安备案
+# compliance_security = "鲁公网安备 xxxxxxxx 号"
+# 公安备案链接
+# compliance_security_link = "https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=xxxxxx"
+# 文章默认封面
+default_cover = "/img/default-cover.webp"
+# 网站联系邮箱
+email = "mail@example.com"
+# 建站时间，用于底部显示年份
+start_year = "2024"
+
+[extra.site.author]
+# 作者头像
+avatar = "/img/logo.webp"
+# 关于页面的横版图片
+about_image = "/img/logo.webp"
+# MBTI 性格
+mbti = 'enfp'
+
+# 是否启用页面统计
+[extra.site.analytics]
+# 关于页面展示访问量
+stat_api = "https://stat-api-url"
+
+# umami 监控
+[extra.site.analytics.umami]
+enable = false
+# 监控的域名，避免被 localhost 统计 可选
+domain = "your.domain.com"
+# umami 服务地址
+remote_url = "https:/stat-api-ur"
+# 网站id 改成你的
+id = "74859602-4481-4cb3-bad0-4e1fd9d23d24"
+# js 地址
+js = "/path/to/script.js"
+# 追踪外部连接
+track_external_link = true
+
+# MS Clarity 监控
+[extra.site.analytics.clarity]
+enable = true
+# 网站ID
+id = ""
+
+[extra.lib]
+katex = true
+
+[extra.feed]
+# atom.xml 中显示文章全文
+full_content_in_feed = false
+
+# follow.is 验证源时使用
+[extra.feed.follow]
+# feed_id = "1234567890"
+# user_id = "1234567890"
+
+# 导航设置
+[extra.nav]
+# 菜单控制
+# [extra.menus]
+# pc端左侧菜单
+pc_left_menu = true
+# 移动左侧菜单
+phone_left_menu = true
+# 移动主菜单
+phone_menu = true
+# 站点名左侧菜单 默认只有主菜单，可前往【外观】—>【菜单】新建菜单组
+
+# 导航栏右侧
+[extra.nav.right]
+# 开往按钮
+travelling = false
+# 右上角随机文章按钮
+article = true
+# 右上角切换主题模式按钮
+dark_mode = true
+# 右上角控制台按钮
+console_enable = true
+# 启用搜索
+search = false
+# 搜索引擎 选项: "meilisearch", "algolia"
+search_engine = "algolia"
+
+# Meilisearch 搜索
+[extra.search.meilisearch]
+# 服务器地址
+host = ""
+# search key
+key = ""
+# 索引名称
+index_name = ""
+
+# Algolia 搜索
+[extra.search.algolia]
+app_id = ""
+app_key = ""
+index_name = ""
+
+# 顶部设置
+[extra.top]
+# 瞬间说说
+moment = false
+# 顶部 Banner 显示
+recent_top = true
+
+# 首页第一屏，开启后会在页面的最上方新增一个第一屏
+[extra.top.above]
+enable = false
+# 打字机显示的文字
+typed = []
+# 随机文字，如果配置了自定义文字，优先展示自定义文字
+enable_typed_random = false
+# 显示视频背景
+enable_above_video = false
+# 视频动态壁纸地址
+index_video = ""
+# PC端背景图地址
+index_img = ""
+# 移动端背景图地址
+phone_index_img = ""
+
+# 全局背景设置
+[extra.top.global_background]
+# 全局透明背景图
+enable = false
+# 全局透明背景视频动态壁纸
+enable_above_video = false
+# 全局背景图片地址
+img = ""
+# 全局背景视频地址
+video = ""
+
+# Banner 左侧
+[extra.top.banner_left]
+# 大标题 支持HTML语法
+title_big = "<div class=\"banners-title-big\">jiaxiang.wang</div><div class=\"banners-title-big\"><a target=\"_blank]\" href=\"https://blog.jiaxiang.wang\">点击预览主题</a></div>"
+# 小标题 支持HTML语法
+title_small = "<br><a target=\"_blank]\" href=\"https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang\">点击访问开源代码仓库</a>"
+
+# 分组
+[[extra.top.banner_left.category_groups]]
+title = "推荐"
+icon = "icon-book"
+url = "/tags/featured"
+colors = { light_one = "#358bff", light_two = "#15c6ff", dark_one = "#0653b8", dark_two = "#2fcbff" }
+
+[[extra.top.banner_left.category_groups]]
+title = "热门"
+icon = "icon-fire"
+url = "/tags/hot"
+colors = { light_one = "#ff6655", light_two = "#ffbf37", dark_one = "#e22a16", dark_two = "#da980c" }
+
+# Banner 右侧
+[extra.top.banner_right]
+
+# 今日推荐，在推荐文章前显示“今日推荐”模块
+[extra.top.banner_right.today_recommend]
+enable = true
+# 文章路径，从content文件夹开始
+
+# 推荐文章
+[extra.top.banner_right.recommend_post]
+# 类型： 最新文章 latest / 自定义推荐 custom
+type = "custom"
+# 推荐文章数量
+max_posts = 6
+
+
+# 导航设置
+[extra.layout]
+
+[extra.layout.navs]
+# 导航条显示内容 Options: 分类 category, 标签 tag, 自定义分类 custom-category, 自定义标签 custom-tag, 自定义路径 custom-url
+nav = "category"
+# 自定义分类列表
+nav_category = []
+# 自定义标签列表
+nav_tag = []
+# 自定义路径列表
+nav_custom_url = []
+# 更多按钮显示内容 Options: 隐藏 hide, 分类 categories, 标签 tags, 自定义地址 customUrl
+nav_more = "categories"
+# 更多按钮跳转 自定义地址
+nav_more_custom_url = ""
+
+[extra.layout.post]
+# 文章布局: "col1" (单列), "col2" (两列), or "col3" (三列)
+columns = "col2"
+
+# 封面位置: 上方 "top", 左侧 "left", 右侧 "right", 交替 "alternate" 建议单列时，将图片放在左右
+cover_position = "top"
+
+# 卡片效果  
+[extra.layout.card]
+# 首页文章卡片(擦亮效果)
+polish_effect = false
+# 鼠标悬停动画
+hover_animation = true
+# 阴影效果
+shadow_effect = true
+
+# 侧边栏
+[extra.sidebar]
+# 侧边栏位置 隐藏 hide-aside 右侧 right-aside 左侧 left-aside
+location = "right-aside"
+
+# 最新文章
+recent_posts_count = 4
+
+# 文章分类 小于 0 则展示全部分类
+category_quantity = 0
+# 文章标签 小于 0 则展示全部标签
+tag_quantity = 6
+# 文章归档 小于 0 则展示全部归档 目前没用等适配
+archives_quantity = 0
+# 标签&归档&统计 (标签按钮开关)
+tags_switch = true
+# 标签&归档&统计 (归档按钮开关)
+archive_switch = false
+
+# 不同页面小部件设置
+[extra.sidebar.widgets]
+# "profile"个人卡片 "wechat"公众号 "power"爱发电赞助 "steam"Steam卡片 "music"音乐卡片 "friend-link"通讯录
+# "recent-posts"最新文章 "visit-posts"热门文章 "comments"最新评论 "categories"文章分类 "tags"文章标签
+# "stat"统计 "tags-stat"标签&归档&统计 "adbox"广告区域 "custom_html"自定义
+
+# 首页小部件
+indexWidget = [
+    { widget = "profile" },
+    { widget = "wechat" },
+    { widget = "comments" },
+    { widget = "recent-posts" },
+    { widget = "categories" },
+    { widget = "tags" },
+]
+
+# 文章页面小部件
+postWidget = [
+    { widget = "profile" },
+    { widget = "wechat" },
+    { widget = "toc" },
+    { widget = "comments" },
+    { widget = "recent-posts" },
+    { widget = "categories" },
+]
+
+# 分类页面小部件
+taxonomyWidget = [
+    { widget = "profile" },
+    { widget = "wechat" },
+    { widget = "comments" },
+    { widget = "recent-posts" },
+    { widget = "categories" },
+    { widget = "tags" },
+]
+
+# 个人卡片
+[extra.sidebar.profile]
+# 样式 default one
+profile_style = "one"
+# 背景图片 提供自己的图片
+background_img = "/img/sidebar/profile.webp"
+# 描述信息 支持html
+profile_desc = "为创造者而生的开源 Zola 主题~"
+# 社交媒体
+socialMedia = [
+    { icon = "icon-github", name = "GitHub", url = "https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang" },
+]
+
+# 公众号
+[extra.sidebar.wechat]
+# 背景颜色
+color = "#07C160"
+# 背景图
+wechatImg = "/img/wechat/gzh_cover.avif"
+# 链接
+url = "/subscribe"
+# 公众号正面图
+wechatImgFace = "/img/wechat/qr-green.avif"
+# 公众号背面图
+wechatImgBack = "/img/wechat/qr-white.avif"
+
+# 爱发电
+[extra.sidebar.power]
+# 赞助地址
+powerLink = "/"
+# 最大展示条数
+showNum = 3
+
+# 最新评论
+[extra.sidebar.newcomment]
+# 跳转地址
+newcommentUrl = "/newest"
+# 最大展示条数 最新评论数量, 小于 0 则展示5条评论
+newcommentnumber = 5
+# 头像服务镜像地址 使用官方源则留空 示例：https://gravatar.com
+providerMirror = "https://cravatar.cn"
+
+# 页脚栏
+[extra.footer]
+# 底部启用
+enable = true
+# 页脚高度
+footer_banner_padding = 1
+# 订阅
+dingyue = true
+# 主题
+theme = true
+# 关于
+about = true
+# icp备案
+icp_icon = true
+# 公网安备案
+gongwangan = true
+# 隐私
+copyright = true
+# 反馈
+feedback = true
+feedback_url = "mailto:mail@example.com"
+
+# 云服务商 upyun_cloud aliyun_cloud tencent_cloud huawei_cloud custom_cloud
+yunzhichi_list = ""
+# 自定义云支持地址
+yunzhichi_url = ""
+# 自定义云支持跳转地址
+yunzhichi_url_link = ""
+
+[extra.footer.footer_bar]
+# 是否显示
+enable = true
+
+# 社交媒体
+[extra.footer.social_media]
+# 中间 logo 是否启用
+img_enable = true
+
+# 左侧社交媒体
+[[extra.footer.social_media.left]]
+# 类型 icon 图标 custom 自定义 自定义类型支持 HTML 语法
+# icon图标选择icon图标，svg代码或者图片(如果使用图片请输入完整img标签)选择自定义
+option_social_data = "icon"
+# icon 图标 支持 HTML 语法 icon图标，svg代码，图片(如果使用图片请输入完整img标签)
+icon = "icon-envelope"
+# 名称
+name = "Mail"
+# 链接
+url = "mailto:mail@example.com"
+
+# 右侧社交媒体
+[[extra.footer.social_media.right]]
+option_social_data = "icon"
+icon = "icon-github"
+name = "Github"
+url = "https://github.com/iWangJiaxiang/zola-theme-jiaxiang.wang"
+
+# 页脚友链
+[extra.footer.footer_group]
+# 是否显示
+enable = true
+# 友链数
+num = 3
+
+# 文章相关配置
+[extra.post]
+# 动态主色 文章主色匹配图片颜色
+dynamicBackground = true
+# 目录模糊效果
+opacity = true
+# 阅读建议 两篇 two 或六篇 six
+recommendQuantity = "two"
+# 版权样式 默认或样式一 default one
+copyrightsStyle = "one"
+# 最后更新时间
+update_time = true
+
+# 文章摘要
+[extra.post.abstract]
+# 是否启用
+enable = true
+# 名称
+gpt_name = "本地"
+# 模式 本地或天理 local tianli
+mode = "local"
+# 显示切换按钮
+switch_btn = false
+# 链接
+btn_link = ""
+# 随机次数 按钮最大的随机次数，也就是一篇文章最大随机出来几种
+random_num = 3
+# 字符数 最低获取字符数, 最小1000, 最大1999
+basic_word_count = 1000
+# api key
+key = "xxxx"
+# 你的博客地址 注意保留最后的斜杠
+referers = "https://xx.xx/"
+
+# Passage Tips Settings
+[extra.post.passage_tip]
+# 是否启用
+enable = true
+# 更新时间大于天数显示
+day = 60
+
+# 运营模式与责任
+[extra.post.post_edit]
+# 是否启用
+enable_post_edit = false
+# 运营模式与责任地址
+post_edit_url = "/rss"
+
+# 分享按钮
+[extra.post.share_right]
+# 启用分享手机访问二维码
+mobile_edit = true
+# 启用分享到微博
+weibo_edit = false
+# 启用复制链接
+copyurl_edit = true
+
+# 版权声明
+[extra.post.copyrights]
+# 是否启用
+enable = true
+# 复制时加上版权信息
+copy_info = false
+# 原创声明内容 支持html
+content = """
+本文是原创文章，采用 <a target="_blank" href="/copyright">CC BY-NC-ND 4.0</a> 协议，转载请注明 <a href="/" target="_blank" >本站名称及地址</a>
+"""
+# 转载声明内容 支持html
+reprintContent = """
+本文是转载文章，版权归原作者所有。建议访问原文，转载本文请联系原作者。
+"""
+
+# 友链设置
+[extra.friend]
+# 小标题
+small_title = "友情链接"
+# 大标题
+big_title = "与各位博主一同进步"
+# 友链链接
+links_url = "/friends"
+# 评论开关
+enable_comment = true
+# 如果有本地logo，则优先使用本地logo
+prefer_local_logo = true
+# 是否使用 js 动态加载（推荐）
+dynamic_render = true
+
+# 我的装备
+[extra.equipment]
+# 背景图    
+background_img = "/img/equipments/bg.webp"
+# 小标题
+small_title = "好物"
+# 大标题
+big_title = "实物装备推荐"
+# 描述
+detail = "跟我一起享受科技带来的乐趣"
+
+btn_title = "主页"
+btn_url = "/"
+
+# 关于设置
+[extra.about]
+# 小部件配置
+widget_list = [
+    "content-idea",        # 我的介绍&我的想法
+    "hello-about",         # 我的问候
+    "author-career",       # 技能&职业生涯
+    "personalities-photo", # 性格&图片
+    "textarea",            # 座右铭
+    "hobby",                # 爱好
+    "like-music",          # 关注偏好&音乐偏好
+    "statistics-map",      # 数据统计&作者相关信息
+]
+
+# 头像左侧个人标签 (也会出现在首页个人简介中)
+author_info_left_tags = [
+    "🤖️ 数码科技爱好者", 
+    "🔯 全栈架构都在行",
+    "🏠 智能家居小能手",
+    "🤝 科研科普两不误",
+]
+
+# 头像右侧个人标签 (也会出现在首页个人简介中)
+author_info_right_tags = [
+    "🎵 业余原创音乐人", 
+    "🏃 文艺青年细节控",
+    "🔍 探索世界涉猎广",
+    "🤛 热爱分享交朋友",
+]
+
+# 我的介绍 支持 HTML 语法
+content = "<div class=\"title1\">云海之中很高兴和你相遇👋</div> <div class=\"title2\">这里是 <span class=\"inline-word\">zola-theme-jiaxiang.wang</span> 博客主题预览站点</div>"
+# 我的想法 支持 HTML 语法
+idea = "<div class=\"author-content-item-tips\">我的创作</div> <h2>主要围绕以下<span class=\"inline-word\"/>领域</span> <div class=\"mask\"> <span class=\"first-tips\" data-show=\"\">博客</span> <span>主题</span> <span data-up=\"\">………</span> </div> </h2>"
+
+# 我的问候
+hello = "Welcome!"
+
+# 照片
+[[extra.about.photos]]
+url = "/img/logo.webp"
+description = "照片"
+
+# 职业生涯
+[extra.about.careers]
+# 生涯标题
+title = "跨界 融合 创新"
+# 生涯背景图 建议找个透明图
+bg = ""
+
+# 职位标签
+[[extra.about.careers.tags]]
+# 颜色
+background = "#ff5f1f"
+# 描述
+occupation = "工程师"
+
+# 职位标签
+[[extra.about.careers.tags]]
+# 颜色
+background = "#1fffff"
+# 描述
+occupation = "架构师"
+
+# 文本块
+# 左边的一行10字 右面一行19字(设置两条数据，不然出不来)
+[extra.about.textarea_left]
+tittle = "心之所向"
+textarea_up = "天若有情天亦老"
+textarea_down = "人间正道是沧桑"
+
+[extra.about.textarea_right]
+tittle = "意之所当"
+textarea_up = "欲买桂花同载酒"
+textarea_down = "终不似，少年游"
+
+# 爱好
+[extra.about.hobby]
+loading_bar = ""
+
+[[extra.about.hobbies]]
+tips = "爱好运动"
+title = "乒乓球、羽毛球、游泳、潜水"
+uid = ""
+# bg_url = "/image/logo.png"
+# 类型(类名) game-lol / game-wolf / comic-content
+class =  "game-lol"
+url = ""
+
+[[extra.about.hobbies]]
+tips = "音乐玩家"
+title = "作词、作曲、编曲，吉他，钢琴"
+uid = ""
+# bg_url = "/image/logo.png"
+# 类型(类名) game-lol / game-wolf / comic-content
+class =  "game-wolf"
+url = ""
+
+# Like Settings
+[extra.about.like]
+tips = "兴趣偏好"
+title = "数码、科技、管理、人文、心理"
+bottom = "感受世界的广度，探索世界的深度"
+# bg = ""
+
+# Music Settings
+[extra.about.music]
+tips = "音乐偏好"
+title = "流行、古典、爵士、Hiphop、EDM、民谣"
+link = ""
+# bg = ""
+
+# 地图相关配置
+[extra.about.map]
+# 居住地
+StrengthenTitle = "山东·济南"
+# 地图亮色模式背景
+background = "/img/me/map.avif"
+# 地图暗色模式背景
+backgroundDark = "/img/me/map.avif"
+
+# 个人信息
+[[extra.about.map.authorInfo]]
+# 标题
+authorInfoTitle = "生于"
+# 内容
+authorInfoContent = "1996"
+# 颜色
+authorInfoColor = "#43a6c6"
+
+# 个人信息
+[[extra.about.map.authorInfo]]
+# 标题
+authorInfoTitle = "职业"
+# 内容
+authorInfoContent = "工程师"
+# 颜色
+authorInfoColor = "#c69043"
+
+# 个人信息
+[[extra.about.map.authorInfo]]
+# 标题
+authorInfoTitle = "毕业院校"
+# 内容
+authorInfoContent = "XXXX学校"
+# 颜色
+authorInfoColor = "#b04fe6"
+
+# 关于（打赏）设置
+[extra.about_reward]
+# 启用关于（打赏）模块
+enable = false
+
+# 标题
+title = "赞赏名单"
+# 内容
+content = "感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造价值。这会让我在这条路上走得更远。"
+
+# 标记金额 大于等于该值自动标记
+reward_number = 10
+
+# 打赏名单地址
+reward_md_url = "/about"
+
+# 打赏按钮
+[extra.about_reward.reward]
+# 启用打赏
+enable = false
+# 文章页面打赏
+enable_wz = true
+# 打赏按钮名称
+name = "赞赏作者"
+# 微信收款码二维码图片链接
+wxPay = "/"
+# 支付宝收款码二维码图片链接
+alipay = ""
+
+
+
+# 打赏名单
+[[extra.about_reward.sponsors]]
+# 姓名
+name = "1"
+# 金额
+amount = 1
+# 时间
+date = "2024-0-65"
+# 头像图片地址
+avatar = ""
+
+[[extra.about_reward.sponsors]]
+# 姓名
+name = "金主"
+# 金额
+amount = 200
+# 时间
+date = "2015-08-05"
+# 头像图片地址
+avatar = "/img/logo.webp"
+
+[extra.about_reward.style]
+# Additional styling options can be added here
+background_color = "#ffffff"
+text_color = "#333333"
+border_radius = "4px"
+padding = "20px"
+
+[extra.about_reward.display]
+# Display options
+show_avatars = true
+show_amounts = true
+show_dates = true
+sort_by = "date"    # Can be "date", "amount", or "name"
+display_limit = 10  # Number of entries to show 
+
+
+# 评论设置
+[extra.comments]
+# 全局评论开关
+enable = false
+
+# 评论系统选择
+# 选项: "twikoo", "artalk", "waline"
+system = "twikoo"
+# 启用/禁用评论懒加载，针对：Twikoo、Artalk、Waline
+lazy_load = false
+
+# Artalk 配置
+[extra.comments.artalk]
+# 启用/禁用 Artalk
+enable = false
+# 标题
+site_name = ""
+# 后端URL
+server = ""
+# js文件地址
+js_url = ""
+# css文件地址
+css_url = ""
+
+# Twikoo 配置
+[extra.comments.twikoo]
+# 启用/禁用 Twikoo
+enable = true
+# 环境ID
+env_id = 'https://your-api-url'
+# js文件地址
+js_url = "https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js"
+
+# Waline 配置
+[extra.comments.waline]
+# 启用/禁用 Waline
+enable = false
+# 后端URL
+server_url = ""
+# js文件地址
+js_url = ""
+# css文件地址
+css_url = ""
+# 语言配置 "格式：{'placeholder': '欢迎评论', 'sofa': '来发评论吧~1'}
+# 更多请查看文档：https://waline.js.org/cookbook/customize/locale.html#%E4%BE%8B%E5%AD%90"
+locale = "{'placeholder': '欢迎评论', 'sofa': '来发评论吧~'}"
+
+# 评论匿名邮箱设置
+[extra.comments.visitor_mail]
+# 启用/禁用评论匿名邮箱
+enable = false
+# 匿名邮箱
+mail = "visitor@xxx.com"
+
+# 评论弹幕设置
+[extra.comments.barrage]
+# 启用/禁用评论弹幕
+enable = true
+# 同时最多显示弹幕数
+max_barrage = 1
+# 弹幕显示间隔时间ms
+barrage_time = 4000
+# 博主邮箱MD5值 用于验证博主评论，可前往cmd5.com加密自己使用的邮箱，选择32位小写
+mail_md5 = ""
+
+# 样式设置
+[extra.style]
+# 颜色方案 system, dark, light
+color_scheme = "system"
+# 亮色主题基色
+theme_light_skin = "#425AEF"
+# 暗色主题基色
+theme_dark_skin = "#f2b94b"
+# 深色模式粒子效果
+universe = true
+# 全局字体 PingFang SC, Hiragino Sans GB, Microsoft YaHei
+font_family = "PingFang SC"
+
+# 繁简转换
+[extra.style.translate]
+# 启用繁简转换
+enable = true
+# 默认编码 2: 简体中文, 1: 繁体中文 
+default_encoding = 2
+
+
+# 代码块设置
+[extra.code]
+# 启用代码块
+enable = true
+# 启用标题
+enable_title = true
+# 启用分割线
+enable_hr = true
+# 启用行号
+enable_line = true
+# 启用复制
+enable_copy = true
+# 启用折叠
+enable_expander = true
+# 启用高度限制
+enable_height_limit = false
+# 高度限制
+height_limit = 300
+# 主题
+theme_light = "one-dark"
+# 暗色主题
+theme_dark = "one-dark"
+# 可选主题：one-dark one-light a11y-dark atom-dark base16-ateliersulphurpool.light cb coldark-cold coldark-dark coy-without-shadows darcula dracula duotone-dark duotone-earth duotone-forest duotone-light duotone-sea duotone-space ghcolors gruvbox-dark gruvbox-light holi-theme hopscotch lucario material-dark material-light material-oceanic night-owl nord pojoaque shades-of-purple solarized-dark-atom synthwave84 vs vsc-dark-plus xonokai z-touch 
+
+# 小部件 右键菜单
+[extra.tool]
+keyboard = true
+
+# 右键菜单
+[extra.tool.right_menu]
+# 启用
+enable = true
+# 右下角悬浮操作按钮
+right_side_enable = true
+# 阅读模式
+readmode = true
+
+# 音乐播放器 左下角音乐
+[extra.tool.nav_music]
+# 启用
+enable = false
+# 音乐id
+id = "xxxxxx"
+# 音乐服务 例如netease（网易云音乐）,tencent（腾讯）,kugou（酷狗）,xiami（小米音乐）,baidu（百度音乐）
+server = "tencent"
+# 播放列表地址
+all_playlist = "https://y.qq.com/n/ryqq/playlist/xxxxx"
+# 音乐api
+meting_api = "https://api.i-meto.com/meting/api?server=:server&type=:type&id=:id&r=:r"
+
+# 右下角弹窗
+[extra.tool.snackbar]
+# 启用
+switch = false
+# 标题
+introduction_title = "协议提醒助手"
+# 内容
+introduction_tip = "查看本站为你的个人隐私做出的努力"
+# 点击跳转地址
+introduction_url = "/privacy"
+# 按钮标题
+introduction_name = "本站如何保护你的隐私"
+
+# 右下角悬浮操作按钮
+[extra.tool.rightside]
+# 启用
+enable = true
+# 阅读模式
+readmode = true
+
+# 其他设置
+[extra.other]
+toc_enable = true
+# 页面卡片顶部气泡升起效果
+bubble_enable = true
+# 渐变滚动条效果
+scrollbar_linear_gradient_enable = false
+# 标签云随机颜色效果
+tag_random_color_enable = true
+# AVIF 图片优化，大幅降低图片尺寸
+avif_enable = true
+
+# 懒加载
+[extra.other.lazyload]
+enable = true
+# 图片加载失败图
+error_img = "/img/404.svg"
+# 加载图片
+loading_img = "/img/lazyload.svg"
+
+# 加载动画
+[extra.other.loading_box]
+# 启用
+enable = true
+# 加载图片
+img = "/img/logo.webp"
+# 加载进度条
+progress_bar = true
+
+# 404 页面
+[extra.other.error_404]
+# 副标题
+subtitle = "请尝试站内搜索寻找文章"
+# 背景
+background = "/img/404.svg"
+
+# 首页问候语
+[extra.other.greeting]
+# 启用
+enable = false
+# 设置
+settings = [
+    { greeting = "晚安😴", start_time = 0, end_time = 5 },
+    { greeting = "早上好鸭👋, 祝你一天好心情！", start_time = 6, end_time = 9 },
+    { greeting = "上午好👋, 状态很好，鼓励一下", start_time = 10, end_time = 10 },
+    { greeting = "11点多啦, 在坚持一下就吃饭啦～", start_time = 11, end_time = 11 },
+    { greeting = "午安👋, 宝贝", start_time = 12, end_time = 14 },
+    { greeting = "🌈充实的一天辛苦啦！", start_time = 14, end_time = 18 },
+    { greeting = "19点喽, 奖励一顿丰盛的大餐吧🍔。", start_time = 19, end_time = 19 },
+    { greeting = "晚上好👋, 在属于自己的时间好好放松😌~", start_time = 20, end_time = 24 },
+]

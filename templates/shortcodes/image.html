@@ -1,0 +1,27 @@
+{# 插入图片短代码 usage: {{ image(img_name="xxxx", width=240, alt="xxxx") }} #}
+{% set document = page | default(value=section) -%} {# this ensures the shortcode works in both pages and sections -#}
+{% set path = document.colocated_path ~ img_name -%}
+{% set width = width | default(value=1000) -%}
+{% set src = path -%}
+{% set alt = alt -%}
+{% set class = "" -%}
+{% set resized = resize_image(format="avif", path=path | trim, width=width, op="fit_width") %}
+{% set resized_fallback = resize_image(format="webp", path=path | trim, width=width, op="fit_width") %}
+{% set thumb = resize_image(format="avif", path=path | trim, width=16, op="fit_width", format="webp", quality=1) %}
+
+<picture class="{% if class != "" %}{{ class }} {% endif %}progressive-picture"
+    style="max-width:{{ width }}px;height:auto;"
+    {# fancybox适配 #}{% if alt != "" %} alt="{{ alt }} "{% endif %}src="{{ resized.url | safe }}">
+    {#- the small image that will be blurred -#}
+    <img class="progressive-thumbnail no-lightbox" src="{{ thumb.url | safe }}" loading="lazy" decoding="async">
+    {#- a lazy responsive image with data-srcset -#}
+    <source media="(min-width: 1em)" srcset="{{ resized.url | safe }}" />
+    <img class="progressive-content no-lightbox"{% if alt != "" %} alt="{{ alt }}"{% endif %}
+      onload="progressiveLoad(this)" loading="lazy" decoding="async"
+      src="{{ resized_fallback.url | safe }}"/>
+    {#- a noscript fallback -#}
+    <noscript>
+      <img loading="lazy" decoding="async"{% if alt != "" %} alt="{{ alt }}"{% endif %}
+        src="{{ resized_fallback.url | safe }}">
+    </noscript>
+</picture>

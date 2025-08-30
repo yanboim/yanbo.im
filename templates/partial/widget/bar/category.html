@@ -1,0 +1,20 @@
+<!-- 目录条 -->
+<div id="category-bar">
+    <div class="category-bar-items" id="category-bar-items">
+        <div class="category-bar-item select" id="category-bar-home">
+            <a href="/">首页</a>
+        </div>
+
+        {% set data = load_data(path="data.toml") %}
+        {% set categories = data.post['categories'] | sort(attribute="index") %}
+        {% for item in categories %}
+            {% set term = get_taxonomy_term(kind="categories", term=item.id, include_pages=false, required=false) %}
+            {% if term %}
+            <div class="category-bar-item" id="{{ item.id }}">
+                <a href="{{ term.permalink }}" >{{ item.name }}</a>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <a class="category-bar-more" href="/categories" >更多</a>
+</div>

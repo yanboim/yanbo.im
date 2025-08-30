@@ -1,0 +1,123 @@
+[build]
+# This assumes that the Zola site is in a docs folder. If it isn't, you don't need
+# to have a `base` variable but you do need the `publish` and `command` variables.
+# base    = "docs"
+publish = "public"
+command = "zola build"
+# command = "npm run abridge -- '--base-url /'"
+
+[build.environment]
+# Set the version name that you want to use and Netlify will automatically use it.
+ZOLA_VERSION = "0.19.2"
+
+# The magic for deploying previews of branches.
+# We need to override the base url with whatever url Netlify assigns to our
+# preview site.  We do this using the Netlify environment variable
+# `$DEPLOY_PRIME_URL`.
+
+[context.deploy-preview]
+# command = "zola build --base-url $DEPLOY_PRIME_URL"
+command = "npm run abridge -- '--drafts --base-url /'"
+
+# Allow All
+# [[headers]]
+#   for = "/*" # you can configure the correct paths here
+#   [headers.values]
+#     Access-Control-Allow-Origin = "*"
+#     Access-Control-Allow-Headers = "Content-Type"
+#     Access-Control-Allow-Methods = "*"
+
+# [[redirects]]
+#   from = "/"
+#   to = "/index.html"
+#   status = 200
+#   force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=63072000; includeSubdomains"
+    # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy (disabled everything except autoplay, local-fonts, screen-wake-lock, speaker-selection)
+    # opt out of Federated Learning of Cohorts (aka "FLoC") - https://amifloced.org/
+    Permissions-Policy = "interest-cohort=(), accelerometer=(), ambient-light-sensor=(), battery=(), bluetooth=(), browsing-topics=(), camera=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), serial=(), storage-access=(), sync-xhr=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()"
+#     Content-Security-Policy = "default-src 'none'; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self'; connect-src 'self' *.hyvor.com ws://*.hyvor.com; script-src 'self' talk.hyvor.com; img-src 'self' data: talk.hyvor.com cdn.cloudflare.com; frame-src 'self' www.youtube-nocookie.com player.vimeo.com streamable.com www.streamable.com; media-src 'self' data: cdn.cloudflare.com www.youtube-nocookie.com player.vimeo.com; font-src 'self' cdn.cloudflare.com cdn.jsdelivr.net fonts.gstatic.com; style-src 'self' talk.hyvor.com cdn.cloudflare.com cdn.jsdelivr.net fonts.googleapis.com;"
+# [[headers]]
+#   for = "*.js"#javascript
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800, must-revalidate"
+# [[headers]]
+#   for = "*.css"#stylesheet
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800, must-revalidate"
+# [[headers]]
+#   for = "*.svg"#image/favicon
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.png"#image/favicon
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.ico"#image/favicon
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.jpg"#image
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.jpeg"#image
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.gif"#image
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.webp"#image
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.avif"#image
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.mp4"#video
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.webm"#video
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.mp3"#audio
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.ogg"#audio
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.otf"#font
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.eot"#font
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.ttf"#font
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.woff"#font
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"
+# [[headers]]
+#   for = "*.woff2"#font
+#   [headers.values]
+#     Cache-Control = "public, max-age=604800"

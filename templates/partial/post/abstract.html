@@ -1,0 +1,43 @@
+{% if config.extra.post.abstract.enable %}
+<div id="abstract-container">
+    <div class="abstract-title"><i class="icon-bilibili"></i>
+        <div class="abstract-title-text">
+            {% if config.extra.post.abstract.mode == "local" %}
+                文章摘要
+            {% else %}
+                AI-摘要
+            {% endif %}
+        </div>
+        {% if config.extra.post.abstract.switch_btn %}
+            <div id="abstract-toggle">切换</div>
+        {% endif %}                        
+        {% if config.extra.post.abstract.mode == "local" %}
+            <div id="abstract-tag">{{ config.extra.post.abstract.gpt_name }}</div>
+        {% endif %}
+        {% if config.extra.post.abstract.mode == "tianli" %}
+            <i class="icon-arrow-rotate-right"></i>
+            <div id="abstract-tag">Tianli GPT</div>
+        {% endif %}
+    </div>
+    <div id="abstract-content" style="display: block;">
+        {% set abstract = page.extra.abstract | default(value=page.description) %}
+        {% if abstract %}
+            {{ abstract | safe }}
+        {% else %}
+            {% if config.extra.post.abstract.mode == "local" %}
+                本地模式需要自己编写文章摘要，本文章还没有摘要哦~
+            {% else %}
+                {# 在线模式允许动态渲染，但是可能会影响搜索索引 #}
+                AI初始化中...
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="abstract-btn-box">
+        <div class="abstract-btn-item" id="abstract-intro">介绍自己</div>
+        <div class="abstract-btn-item" id="abstract-generate">生成本文简介</div>
+        <div class="abstract-btn-item" id="abstract-recommend">推荐相关文章</div>
+        <div class="abstract-btn-item" id="abstract-home">前往主页</div>
+        <div class="abstract-btn-item" id="abstract-hide" style="margin-left:auto;">隐藏本摘要</div>
+    </div>
+</div>
+{% endif %}
