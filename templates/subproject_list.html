@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{%- if paginator.pages -%}
+	{%- set number_of_posts = paginator.total_pages -%}
+{%- elif section.pages -%}
+	{%- set number_of_posts = section.pages | length -%}
+{%- endif -%}
+
+<h1>{{ section.title }}</h1>
+
+{{ section.content | safe }}
+
+{# <div class="sparkline">
+	{%- if paginator.pages -%}
+		{%- set pages = paginator.pages -%}
+	{%- elif section.pages -%}
+		{%- set pages = section.pages -%}
+	{%- else -%}
+		{%- set pages = term.pages -%}
+	{%- endif -%}
+
+	{%- for month, pages in pages | group_by(attribute="month") -%}
+		{%- set posts_per_bar = pages | length -%}
+		{%- set bar_height = pages | length * 10 -%}
+		<div style="--bar-height: {{ bar_height ~ '%' }}" title="{{ macros_translate::translate(key='posts', number=posts_per_bar, default='$NUMBER posts in total', language_strings=language_strings) }}"></div>
+	{%- endfor -%}
+</div> #}
+
+<p>
+	<small>
+		{%- if (config.taxonomies | length > 0) and not config.extra.hide_subproject_tags -%}
+			<a href="{{ get_url(path='tags', lang=lang) }}">
+				{{ macros_translate::translate(key="filter_by_tag", default="Filter by tag", language_strings=language_strings) }}
+			</a>
+			<br />
+		{%- endif -%}
+		{%- if not config.extra.hide_number_of_subprojects -%}
+			{{ macros_translate::translate(key="posts", number=number_of_posts, default="$NUMBER posts in total", language_strings=language_strings) }}
+		{%- endif -%}
+	</small>
+</p>
+
+{% include "partials/subprojects.html" %}
+{% include "partials/paginator.html" %}
+
+{% endblock content %}

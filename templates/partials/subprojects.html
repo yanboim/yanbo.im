@@ -1,0 +1,27 @@
+<div id="subproject-list">
+	{%- for page in section.pages %}
+		<article class="{%- if page.extra.expand -%}expand{%- endif -%}">
+			{%- if page.extra.url -%}
+				<a href="{{ page.extra.url }}"></a>
+			{%- else -%}
+				<a href="{{ page.permalink | safe }}"></a>
+			{%- endif -%}
+			{% if page.extra.badge %}
+					<span id="{%- if config.extra.left_align_badges -%}left-align-badge{%- endif -%}" class="badge subproject-badge">
+						{{ page.extra.badge }}
+					</span>
+				{%- endif %}
+			{%- if page.extra.preview -%}
+				<img class="preview" src="{{ current_url ~ page.slug ~ "/" ~ page.extra.preview }}" {% if config.markdown.lazy_async_image %}decoding="async" loading="lazy"{% endif %} />
+			{%- endif -%}
+			<div id="subproject-info">
+				<h3>
+					{{ page.title }}
+				</h3>
+				{%- if page.description %}
+					{{ page.description | markdown | safe }}
+				{%- endif %}
+			 </div>
+		</article>
+	{%- endfor %}
+</div>

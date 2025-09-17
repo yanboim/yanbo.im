@@ -1,0 +1,52 @@
+#subproject-list {
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	article {
+		min-width: 300px;
+		flex-grow: 1;
+
+		img {
+			margin: 0;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+			box-shadow: none;
+			object-fit: cover;
+			height: 200px;
+			width: 100%;
+		}
+
+		#subproject-info {
+			padding: 1.5rem;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	article:not(.expand) {
+		width: calc(50% - 0.5rem);
+	}
+
+	.expand {
+		flex-grow: 2;
+	}
+
+	.badge {
+		color: var(--accent-color);
+		pointer-events: none;
+		position: absolute;
+		z-index: 10;
+		margin: 20px;
+		background-color: var(--bg-color)
+	}
+
+	.badge:not(#left-align-badge) {
+		right: 0;
+	}
+
+	#left-align-badge {
+		left: 0;
+	}
+}

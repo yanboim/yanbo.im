@@ -1,0 +1,32 @@
+{%- if page %}
+	{% set slug = page.slug %}
+{%- else %}
+	{% set slug = "" %}
+{%- endif %}
+
+<div id="docs">
+	<ul>
+	{%- for page in section.pages %}
+		{%- if page.extra.section %}
+			{%- if page.extra.section == 0 %}
+				{% include "partials/docs_toc_item.html" %}
+			{%- endif %}
+		{%- else %}
+			{% include "partials/docs_toc_item.html" %}
+		{%- endif %}
+	{%- endfor %}
+	{%- if section.extra.sections %}
+		{%- for section in section.extra.sections %}
+			{% set int_section = loop.index %}
+			<h3>{{ section }}</h3>
+			{%- for page in section.pages %}
+				{%- if page.extra.section %}
+					{%- if page.extra.section == int_section %}
+						{% include "partials/docs_toc_item.html" %}
+					{%- endif %}
+				{%- endif %}
+			{%- endfor %}
+		{% endfor %}
+	{%- endif %}
+	</ul>
+</div>
