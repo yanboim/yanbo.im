@@ -5,8 +5,6 @@ page_template = "documentation_page.html"
 
 [extra]
 sections = [
-  "Usage",
-  "Markdown",
-  "Advanced"
+
 ]
 +++

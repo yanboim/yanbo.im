@@ -5,4 +5,4 @@ template = "article_list.html"
 page_template = "article.html"
 +++
 
-News about the latest changes in the Duckling project.
+日常博客文章。

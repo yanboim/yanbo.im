@@ -34,6 +34,24 @@
 
 	{%- include "partials/variables.html" %}
 
+	<!-- Google AdSense Auto ads -->
+	{%- if config.extra.google.adsense_id %}
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-{{ config.extra.google.adsense_id }}" crossorigin="anonymous"></script>
+	{%- endif %}
+	<!-- End Google AdSense -->
+
+	<!-- Google Analytics -->
+	{%- if config.extra.google.analytics_id %}
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.google.analytics_id }}"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', '{{ config.extra.google.analytics_id }}');
+	</script>
+	{%- endif %}
+	<!-- End Google Analytics -->
+
 	{%- set styles = [ "style.css" ] %}
 
 	{%- if config.extra.bundled_fonts %}

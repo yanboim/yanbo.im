@@ -47,7 +47,7 @@
 			<small>
 				{%- set zola_link = '<a class="link external" href="https://www.getzola.org" rel="' ~ rel_attributes ~ '">Zola</a>' -%}
 				{%- set duckling_link = '<a class="link external" href="https://duckling.aparoksha.dev" rel="' ~ rel_attributes ~ '">Duckling</a>' -%}
-				{{ macros_translate::translate(key="powered_by", default="Powered by $ZOLA and $DUCKLING", language_strings=language_strings) | replace(from="$ZOLA", to=zola_link) | replace(from="$DUCKLING", to=duckling_link) | safe }}
+				<!-- {{ macros_translate::translate(key="powered_by", default="Powered by $ZOLA and $DUCKLING", language_strings=language_strings) | replace(from="$ZOLA", to=zola_link) | replace(from="$DUCKLING", to=duckling_link) | safe }} -->
 			</small>
 		</p>
 	{%- endif %}
