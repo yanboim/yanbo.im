@@ -112,7 +112,7 @@ hide_subproject_tags = true
 # 请注意，虽然这可能增加安全性
 # 但可能会导致某些功能失效，此时需要设置自定义策略
 csp = [
-    { directive = "font-src", domains = ["'self'"] },
+    { directive = "font-src", domains = ["'self'","data:"] },
     { directive = "img-src", domains = ["'self'", "https:", "data:"] },
     { directive = "media-src", domains = ["'self'", "https:"] },
     { directive = "script-src", domains = ["'self'"] },
