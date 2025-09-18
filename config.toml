@@ -133,12 +133,12 @@ show_theme_switcher = true
 # 对于本地文件使用与 Markdown 相同的链接格式
 # 即 "@/blog/_index.md"
 links = [
-	{ name = "Links", menu = [
-	{ url = "@/blog/_index.md", name = "Blog" }
-	] },
-    { url = "@/docs/gettingstarted/index.md", name = "Docs" },
+    { url = "@/blog/_index.md", name = "Blog" },
     { url = "@/subprojects/_index.md", name = "Projects" },
-	{ url = "@/pages/about.md", name = "About" }
+    { name = "Links", menu = [
+	    { url = "@/docs/gettingstarted/index.md", name = "Docs" },
+	] },
+	# { url = "@/pages/about.md", name = "About" }
 ]
 
 [extra.footer]
@@ -190,13 +190,13 @@ user = ""
 show_qr = true
 
 # GoatCounter 分析；仅在配置中存在时启用
-[extra.goatcounter]
-# 你的 GoatCounter 服务器；默认使用 goatcounter.com
-#
-# host = "YOUR_SERVER"
-#
-# 你的 GoatCounter 用户名
-user = ""
+# [extra.goatcounter]
+# # 你的 GoatCounter 服务器；默认使用 goatcounter.com
+# #
+# # host = "YOUR_SERVER"
+# #
+# # 你的 GoatCounter 用户名
+# user = ""
 
 [extra.debug]
 # 显示所有元素的轮廓以便调试
