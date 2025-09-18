@@ -52,7 +52,7 @@
 	{%- endif %}
 	<!-- End Google Analytics -->
 
-	{%- set styles = [ "style.css" ] %}
+	{%- set styles = [ "style.css", "icons.css" ] %}
 
 	{%- if config.extra.bundled_fonts %}
 		{%- set styles = styles | concat(with=["fonts.css"]) %}
@@ -101,6 +101,18 @@
 		{%- set scripts = scripts | concat(with=["katex.min.js", "auto-render.min.js", "katex-init.js"]) %}
 	{%- endif %}
 
+	{%- if config.build_search_index %}
+		{%- if config.search.index_format == "elasticlunr_json" -%}
+			{%- set scripts = scripts | concat(with=["elasticlunr.min.js", "search-elasticlunr.js"]) %}
+		{%- elif config.search.index_format == "fuse_json" -%}
+			{%- set scripts = scripts | concat(with=["fuse.js", "search-fuse.js"]) %}
+		{%- endif -%}
+	{%- endif %}
+
+	{%- if config.extra.nav.show_theme_switcher %}
+		{%- set scripts = scripts | concat(with=["theme-switcher.js"]) %}
+	{%- endif %}
+
 	{%- if page.extra.comments.id %}
 		{%- set scripts = scripts | concat(with=["comments.js"]) %}
 	{%- endif %}
@@ -125,6 +137,8 @@
 	<meta property="og:title" content="{% include 'partials/title.html' %}" />
 	<meta property="og:url" content="{{ current_url | default(value='/') | safe }}" />
 	<meta property="og:description" content="{% include 'partials/description.html' %}" />
-	<meta property="og:image" content="{% include 'partials/card.html' %}" />
+	{%- if config.extra.card is not defined or config.extra.card != false -%}
+		<meta property="og:image" content="{% include 'partials/card.html' %}" />
+	{%- endif -%}
 	<meta property="og:locale" content="{{ macros_translate::translate(key='date_locale', default='en_US', language_strings=language_strings) }}" />
 </head>

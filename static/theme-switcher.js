@@ -40,6 +40,9 @@ function setTheme(theme, saveToLocalStorage = false) {
 
 	// Update icon class based on the selected theme.
 	updateIconClass(theme);
+
+	// Update the active button based on the selected theme.
+	updateActiveButton(theme);
 }
 
 function resetTheme() {
@@ -69,9 +72,33 @@ function updateIconClass(theme) {
 	}
 }
 
+function updateActiveButton(theme) {
+	// Remove .active class from all buttons
+	document.querySelectorAll('#theme-switcher button').forEach(button => {
+		button.classList.remove('active');
+	});
+
+	// Add .active class to the button corresponding to the current theme
+	const activeButton = document.querySelector(`#theme-${theme}`);
+	if (activeButton) {
+		activeButton.classList.add('active');
+	}
+}
+
+document.getElementById("theme-light").addEventListener("click", function () {
+	switchTheme("light");
+});
+document.getElementById("theme-dark").addEventListener("click", function () {
+	switchTheme("dark");
+});
+document.getElementById("theme-system").addEventListener("click", function () {
+	switchTheme("system");
+});
+
 // Update icon class on page load based on current theme
 const currentTheme = localStorage.getItem("theme") || window.defaultTheme || "system";
 updateIconClass(currentTheme);
+updateActiveButton(currentTheme);
 
 // Make the switchTheme function accessible globally
 window.switchTheme = switchTheme;

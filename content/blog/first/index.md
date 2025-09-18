@@ -8,3 +8,11 @@ tags = ["first"]
 +++
 
 > 这是第一篇博文。
+
+``` python
+print("hello world")
+```
+
+``` java
+System.out.print("hello world")
+```
