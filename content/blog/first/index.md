@@ -6,6 +6,7 @@ date = 2025-09-17
 [taxonomies]
 tags = ["first"]
 +++
+![这是我](../../me.png)
 
 > 这是第一篇博文。
 
