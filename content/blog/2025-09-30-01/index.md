@@ -2,24 +2,21 @@
 title = "实战：为现有 Elasticsearch 8.4.3 Docker 集群启用安全认证"
 slug = "enable-security-for-existing-elasticsearch-8-docker-cluster"
 description = "本文提供一个详细、可执行的方案，指导您如何为一个已运行并存有数据的 Elasticsearch 8.4.3 Docker 集群安全地启用 TLS 加密和用户密码认证，并配置 Kibana 和 Logstash 接入。内容涵盖证书生成、滚动更新、密码重置、Kibana 服务账号配置等关键步骤。"
-date = "2024-05-24"
-updated = "2024-05-24"
+date = "2025-09-30"
+updated = "2025-09-30"
 draft = false
 
 [taxonomies]
-categories = ["技术", "运维"]
-tags = ["Elasticsearch", "Docker", "安全", "Kibana", "Logstash", "TLS"]
+tags = ["Elasticsearch", "Kibana", "Logstash", "TLS"]
 
 [extra]
 author = "Yanbo"
-cover = "images/default-cover.jpg"
 toc = true
 reading_time = true
 series = "Elasticsearch 运维实战"
 featured = true
 keywords = ["Elasticsearch 8", "Docker Compose", "启用安全", "TLS证书", "Kibana认证", "Logstash配置"]
 lang = "zh"
-canonical_url = "https://example.com/posts/enable-security-for-existing-elasticsearch-8-docker-cluster"
 robots = "index, follow"
 +++
 
